@@ -1,0 +1,107 @@
+/* Navbar Styles */
+
+.input-filter {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.input-filter::placeholder {
+  font-size: 14px; /* Adjust the font size as needed */
+  color: #999; /* Adjust the color of the placeholder text */
+}
+
+.input-search {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  margin-right: 10px;
+  margin-left: 30px;
+}
+
+.input-search::placeholder {
+  font-size: 14px; /* Adjust the font size as needed */
+  color: #999; /* Adjust the color of the placeholder text */
+}
+
+.navbar {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 10px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  margin: 0 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Product List Styles */
+.product-list {
+  margin-top: 40px; /* Add margin to create space for Navbar */
+  /* The rest of your ProductList styles... */
+}
+
+.product-filter {
+  text-align: center;
+  background-color: white; /* Add background color to the filter section */
+  padding: 10px; /* Add padding to the filter section */
+}
+
+.product-filter input[type="number"],
+.product-filter input[type="text"],
+.product-filter button {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 0px;
+}
+
+.product-filter button {
+  background-color: #0e0e0d; /* Change the background color to match your design */
+  color: #fff; /* Set text color to white */
+  font-weight: bold; /* Make the text bold */
+  cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+.product-filter input[type="number"]::placeholder,
+.product-filter input[type="text"]::placeholder {
+  font-size: 14px; /* Adjust the font size as needed */
+  color: #999; /* Adjust the color of the placeholder text */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .navbar li {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+}
