@@ -59,7 +59,7 @@ function ProductList({ cart, setCart }) {
   };
 
   return (
-    <div className="product-list">
+    <div className="product-list flex flex-col">
       {/* <h2>Product List kskjhkjshkjhksjhkjhskk</h2> */}
       <div className="product-filter">
         <input
@@ -78,23 +78,25 @@ function ProductList({ cart, setCart }) {
         />
         <button onClick={handleSearch}>Search</button>
       </div>
-      {products.map((product) => (
-        <div className="product-card" key={product.id}>
-          <h3 className="product-title">{product.title}</h3>
-          <p className="product-price">${product.price}</p>
-          <img
-            className="product-image"
-            src={product.image}
-            alt={product.title}
-          />
-          <p className="product-description">
-            {truncateDescription(product.description, 10)}
-          </p>
-          <button className="add-to-cart" onClick={() => addToCart(product)}>
-            Add to Cart
-          </button>
-        </div>
-      ))}
+      <div className="flex flex-wrap flex-row justify-center" id="#products">
+        {products.map((product) => (
+          <div className="product-card" key={product.id}>
+            <h3 className="product-title">{product.title}</h3>
+            <p className="product-price">${product.price}</p>
+            <img
+              className="product-image mb-[10px]"
+              src={product.image}
+              alt={product.title}
+            />
+            <p className="product-description mb-[10px] text-sm text-slate-700">
+              {truncateDescription(product.description, 10)}
+            </p>
+            <button className="add-to-cart" onClick={() => addToCart(product)}>
+              Add to Cart
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

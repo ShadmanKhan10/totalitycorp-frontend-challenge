@@ -31,36 +31,45 @@ function Checkout({ cart }) {
   const total_amt = calculateTotal();
 
   return (
-    <div>
-      <h2>Checkout</h2>
-      {total_amt > 0 && (
-        <p>Your Total is ${calculateTotal()} proceed to checkout!</p>
-      )}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={formData.name}
-          onChange={handleInputChange}
-        />
-        <input
-          type="text"
-          name="address"
-          placeholder="Address"
-          value={formData.address}
-          onChange={handleInputChange}
-        />
-        <input
-          type="text"
-          name="cardNumber"
-          placeholder="Card Number"
-          value={formData.cardNumber}
-          onChange={handleInputChange}
-        />
-        <button type="submit">Pay Now</button>
-      </form>
-    </div>
+    <section className="h-screen w-screen flex justify-center items-center">
+      <div className="lg:mt-12 md:mt-24 px-10 py-5 max-w-5xl border border-2 border-green-500 rounded-md">
+        <h2 className="text-4xl mb-[15px]">Checkout</h2>
+        {total_amt > 0 && (
+          <p className="mb-[15px]">
+            Your Total is ${calculateTotal()} proceed to checkout!
+          </p>
+        )}
+        <form onSubmit={handleSubmit} className="grid gap-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={formData.name}
+            onChange={handleInputChange}
+          />
+          <input
+            type="text"
+            name="address"
+            placeholder="Address"
+            value={formData.address}
+            onChange={handleInputChange}
+          />
+          <input
+            type="text"
+            name="cardNumber"
+            placeholder="Card Number"
+            value={formData.cardNumber}
+            onChange={handleInputChange}
+          />
+          <button
+            type="submit"
+            className="py-[5px] px-[12px] bg-[#A2FF86] rounded-lg "
+          >
+            Pay Now
+          </button>
+        </form>
+      </div>
+    </section>
   );
 }
 
