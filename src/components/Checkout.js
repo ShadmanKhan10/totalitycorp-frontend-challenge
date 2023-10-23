@@ -1,9 +1,7 @@
 import React from "react";
 
 function Checkout({ cart }) {
-  // State to manage form inputs and payment details
   const [formData, setFormData] = React.useState({});
-  // Handle form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -12,10 +10,8 @@ function Checkout({ cart }) {
     });
   };
 
-  // Handle form submission for payment
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Process payment and complete the order
     setFormData({ name: "", address: "", cardNumber: "" });
     alert("Your order has been placed");
   };

@@ -15,7 +15,7 @@ function ShoppingCart({ cart, setCart }) {
   };
 
   return (
-    <div className="lg:mt-12 md:mt-24">
+    <div className="lg:mt-12 md:mt-16">
       <h2 className="text-bold text-4xl">Shopping Cart</h2>
       <div>
         <ul className="flex flex-wrap justify-center">
@@ -51,7 +51,6 @@ function ShoppingCart({ cart, setCart }) {
       <p className="text-lg font-semibold text-center">
         Your Total: ${calculateTotal()}
       </p>{" "}
-      {/* Display the total cost */}
     </div>
   );
 }

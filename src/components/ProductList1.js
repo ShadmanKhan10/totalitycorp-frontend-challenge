@@ -11,12 +11,10 @@ function truncateDescription(description, wordCount) {
 }
 
 function ProductList({ cart, setCart }) {
-  // State to manage products, filter, search query, and products data
   const [products, setProducts] = useState([]);
   const [filterPrice, setFilterPrice] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Function to fetch products from an API
   const fetchProducts = async () => {
     try {
       const response = await fetch("https://fakestoreapi.com/products"); // Replace with your API endpoint
@@ -31,12 +29,10 @@ function ProductList({ cart, setCart }) {
     }
   };
 
-  // Fetch products when the component mounts
   useEffect(() => {
     fetchProducts();
   }, []);
 
-  // Function to filter products based on price
   const filterProducts = () => {
     const filteredProducts = products.filter(
       (product) => product.price <= filterPrice
@@ -59,8 +55,7 @@ function ProductList({ cart, setCart }) {
   };
 
   return (
-    <div className="product-list flex flex-col">
-      {/* <h2>Product List kskjhkjshkjhksjhkjhskk</h2> */}
+    <div className="product-list">
       <div className="product-filter">
         <input
           className="input-filter"
@@ -78,17 +73,17 @@ function ProductList({ cart, setCart }) {
         />
         <button onClick={handleSearch}>Search</button>
       </div>
-      <div className="flex flex-wrap flex-row justify-center" id="#products">
+      <div className="flex flex-wrap justify-center" id="#products">
         {products.map((product) => (
           <div className="product-card" key={product.id}>
-            <h3 className="product-title">{product.title}</h3>
-            <p className="product-price">${product.price}</p>
             <img
-              className="product-image mb-[10px]"
+              className="product-image"
               src={product.image}
               alt={product.title}
             />
-            <p className="product-description mb-[10px] text-sm text-slate-700">
+            <h3 className="product-title">{product.title}</h3>
+            <p className="product-price">${product.price}</p>
+            <p className="product-description text-sm text-slate-700">
               {truncateDescription(product.description, 10)}
             </p>
             <button className="add-to-cart" onClick={() => addToCart(product)}>
